@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'SIFI',
+  title: 'SIFI - Linjeforening for informasjonssikkerhet',
   description: 'Linjeforening for informasjonssikkerhet på UiO',
   icons: {
     apple: '/apple-touch-icon.png',
