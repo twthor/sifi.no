@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-items-center dark:bg-gray-900 p-8 pb-20 md:pb-32 gap-8 sm:p-8 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-3xl mb:text-5xl font-bold mb-2 text-center underline decoration-sifiblue">
+      <h1 className="text-3xl mb:text-5xl font-bold mb-2 text-center">
         SIFI - Linjeforeningen for informasjonssikkerhet
       </h1>
       <h2 className="text-2xl mb:text-4xl font-bold mb-2 p-4 text-white text-center bg-gradient-to-r from-sifiblue to-blue-500 rounded">

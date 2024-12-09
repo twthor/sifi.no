@@ -44,7 +44,7 @@ export default async function PostPage({
         )}
         <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
         <p>
-          Published: {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
+          Publisert: {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
         </p>
         <p>
           Tidspunkt: {new Date(post.eventStart).toLocaleDateString('nb-NO')}{' '}

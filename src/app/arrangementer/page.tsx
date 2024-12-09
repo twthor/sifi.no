@@ -4,10 +4,9 @@ import { type SanityDocument } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
-import { notFound } from 'next/navigation';
 
 const POST_QUERY = `
-  *[_type == "post"] | order(_createdAt desc)[0...3]
+  *[_type == "post"] | order(eventStart desc)[0...3]
 `;
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
@@ -28,7 +27,12 @@ async function PostPage() {
   const posts = await client.fetch<SanityDocument>(POST_QUERY, {}, options);
   console.log(posts);
   if (!posts || posts.length === 0) {
-    return notFound();
+    return (
+      <div className="min-h-screen flex flex-col justify-start items-center gap-4 pt-20 dark:bg-gray-900">
+        <p className="text-2xl font-semibold">Her var det tomt gitt!</p>
+        <p className="text-xl">Følg med her for fremtidige arrangementer 😄</p>
+      </div>
+    );
   }
   return (
     <div>

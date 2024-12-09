@@ -39,7 +39,7 @@ const Footer = () => {
           <p className="text-white underline">Hovedsamarbeidspartner:</p>
           <picture>
             <Image
-              src={'/images/mnemonic-logo.png'}
+              src={'/images/mnemonic_logo_light.png'}
               alt="white logo"
               height={300}
               width={250}
