@@ -6,7 +6,7 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
 
 const POST_QUERY = `
-  *[_type == "post"] | order(eventStart desc)[0...3]
+  *[_type == "post"] | order(eventStart asc)[0...3]
 `;
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
@@ -44,7 +44,7 @@ async function PostPage() {
         const page_id = post.slug?.current || '';
 
         return (
-          <div key={post._id} className="mb-12 p-8">
+          <div key={post._id} className="mb-4 p-8">
             {postImageUrl && (
               <Link href={`/arrangementer/${page_id}`}>
                 <Image
