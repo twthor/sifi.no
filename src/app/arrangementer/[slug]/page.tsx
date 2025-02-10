@@ -46,9 +46,8 @@ export default async function PostPage({
         <p>
           Publisert: {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
         </p>
-        <p>
-          Tidspunkt: {new Date(post.eventStart).toLocaleDateString('nb-NO')}{' '}
-        </p>
+        <p>Tidspunkt: {new Date(post.eventStart).toLocaleString('nb-NO')} </p>
+        <p>Sted: {post.place}</p>
       </div>
       <div className="prose md:flex md:flex-col md:justify-center md:items-center md:flex-wrap md:text-center md:w-96 md:pt-8">
         {Array.isArray(post.body) && (

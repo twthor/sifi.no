@@ -66,8 +66,7 @@ async function PostPage() {
                 {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
               </p>
               <p>
-                Tidspunkt:{' '}
-                {new Date(post.eventStart).toLocaleDateString('nb-NO')}{' '}
+                Tidspunkt: {new Date(post.eventStart).toLocaleString('nb-NO')}{' '}
               </p>
             </div>
           </div>
