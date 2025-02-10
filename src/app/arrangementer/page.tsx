@@ -25,11 +25,6 @@ interface Post {
 }
 async function PostPage() {
   const posts = await client.fetch<SanityDocument>(POST_QUERY, {}, options);
-  console.log(
-    posts.eventStart.toLocaleString('nb-NO', {
-      timeZone: 'Europe/Oslo',
-    })
-  );
   if (!posts || posts.length === 0) {
     return (
       <div className="min-h-screen flex flex-col justify-start items-center gap-4 pt-20 dark:bg-gray-900">
