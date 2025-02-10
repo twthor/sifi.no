@@ -20,7 +20,9 @@ export default async function PostPage({
   params: { slug: string };
 }) {
   const post = await client.fetch<SanityDocument>(POST_QUERY, params, options);
-  console.log(post);
+  console.log(
+    post.eventStart.toLocaleString('nb-NO', { timeZone: 'Europe/Oslo' })
+  );
   if (post == null) {
     return notFound();
   }
