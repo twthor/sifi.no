@@ -27,23 +27,24 @@ const About = () => {
           </section>
           <section className="flex flex-col items-center">
             <div className="items-center">
-              <h2 className="text-2xl font-semibold mb-2">Møt styret 2024</h2>
-              <p className="py-4">
+              <h2 className="text-2xl font-semibold mb-2">Møt styret 2025</h2>
+              <p>
                 Linjeforeningens styre består av 9 medlemmer som er demokratisk
                 valgt, og har som hovedansvar å aktivt arbeide for å drive
                 linjeforeningen, styre økonomien og sørge for at foreningens
-                formål blir møtt. SIFI sitt hovedstyre består av:
+                formål blir møtt.
               </p>
+              <p className="py-2">SIFI sitt hovedstyre består av:</p>
               <ul className="list-inside list-disc pb-8">
-                <li>Leder: Karishma Sharma</li>
-                <li>Nestleder: Vetle Bergstad</li>
-                <li>Økonomiansvarlig: Magnus Dhelie</li>
-                <li>Bedriftskontakt: Pavel Blindheim</li>
-                <li>PR: Karin Pettersen</li>
-                <li>Arrangementansvarlig: Pawel Rodziewicz</li>
-                <li>Styremedlem: Adrian Skansen</li>
-                <li>Styremedlem: Pernille Vannebo</li>
-                <li>Styremedlem: Tobias With Thorsen</li>
+                <li>Leder: Pernille Vannebo</li>
+                <li>Nestleder: Tobias With Thorsen</li>
+                <li>Økonomiansvarlig: Vegard Otterlei</li>
+                <li>Bedriftskontakt: Magnus Økstad</li>
+                <li>PR: Julia Vister</li>
+                <li>Arrangementansvarlig: Adrian Skansen</li>
+                <li>Styremedlem: Ahmed Abdulahi Ahmed</li>
+                <li>Styremedlem: Emil Johannessen</li>
+                <li>Styremedlem: Sindre Vikre</li>
               </ul>
             </div>
             <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
