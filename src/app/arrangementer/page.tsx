@@ -33,9 +33,17 @@ async function PostPage() {
       </div>
     );
   }
+
+  const today = new Date();
+  const filteredPosts =
+    posts?.filter((post: Post) => {
+      const eventStart = new Date(post.eventStart);
+      return eventStart >= today;
+    }) || [];
+
   return (
     <div>
-      {posts.map((post: Post) => {
+      {filteredPosts.map((post: Post) => {
         const postImageUrl = post.image
           ? urlFor(post.image)?.width(550).height(310).url()
           : null;
