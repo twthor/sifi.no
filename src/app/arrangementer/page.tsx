@@ -17,7 +17,7 @@ const options = { next: { revalidate: 30 } };
 interface Post {
   _id: string;
   title: string;
-  image?: SanityImageSource;
+  images?: SanityImageSource[];
   slug?: { current: string };
   publishedAt: string;
   eventStart: string;
@@ -44,18 +44,19 @@ async function PostPage() {
   return (
     <div>
       {filteredPosts.map((post: Post) => {
-        const postImageUrl = post.image
-          ? urlFor(post.image)?.width(550).height(310).url()
-          : null;
+        const imageUrls =
+          post.images?.map((image: SanityImageSource) =>
+            urlFor(image)?.width(550).height(310).url()
+          ) || [];
 
         const page_id = post.slug?.current || '';
 
         return (
           <div key={post._id} className="mb-4 p-8">
-            {postImageUrl && (
+            {imageUrls || (
               <Link href={`/arrangementer/${page_id}`}>
                 <Image
-                  src={postImageUrl}
+                  src={imageUrls[0]}
                   alt={post.title}
                   className="aspect-video rounded-xl pb-2"
                   width="550"
