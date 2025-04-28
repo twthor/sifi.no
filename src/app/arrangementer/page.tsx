@@ -50,13 +50,14 @@ async function PostPage() {
           ) || [];
 
         const page_id = post.slug?.current || '';
+        const firstImageUrl = imageUrls[0];
 
         return (
           <div key={post._id} className="mb-4 p-8">
-            {imageUrls || (
+            {firstImageUrl && (
               <Link href={`/arrangementer/${page_id}`}>
                 <Image
-                  src={imageUrls[0]}
+                  src={firstImageUrl}
                   alt={post.title}
                   className="aspect-video rounded-xl pb-2"
                   width="550"
