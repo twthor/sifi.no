@@ -34,6 +34,12 @@ const Footer = () => {
           >
             Instagram
           </Link>
+          <Link
+            href="https://www.linkedin.com/company/sikkerhetifi/"
+            className="hover:underline text-white"
+          >
+            LinkedIn
+          </Link>
         </div>
         <div className="flex flex-col pb-8 md:pb-4 md:pt-10">
           <p className="text-white underline">Hovedsamarbeidspartner:</p>
