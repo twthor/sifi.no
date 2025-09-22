@@ -41,31 +41,33 @@ export default async function PostPage({
 
   return (
     <main className="min-h-screen p-4 pt-8 md:pt-10 flex flex-col md:flex-row md:justify-center md:items-start items-center gap-4 m-0 dark:bg-gray-900">
-      <div className="flex flex-col">
+      <div className="flex flex-col md:pr-8">
         <Link href="/arrangementer" className="hover:underline">
           ← Tilbake til arrangementer
         </Link>
-        <Carousel className="w-full max-w-[550px] h-[310px] px-0 m-0">
-          <CarouselContent>
-            {Array.from({ length: imageUrls.length }).map((_, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  {imageUrls && (
-                    <Image
-                      src={imageUrls[index]}
-                      alt={post.title}
-                      className="aspect-video rounded-xl"
-                      width="550"
-                      height="310"
-                    />
-                  )}
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <div className="relative">
+          <Carousel className="w-full max-w-[550px] h-[310px] px-0 m-0">
+            <CarouselContent>
+              {Array.from({ length: imageUrls.length }).map((_, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    {imageUrls && (
+                      <Image
+                        src={imageUrls[index]}
+                        alt={post.title}
+                        className="aspect-video rounded-xl"
+                        width="550"
+                        height="310"
+                      />
+                    )}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
+        </div>
 
         <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
         <p>
