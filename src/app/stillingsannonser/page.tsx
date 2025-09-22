@@ -6,7 +6,7 @@ import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
 
 const ANNONSE_QUERY = `
-  *[_type == "stillingsannonse"] | order(eventStart desc)[0...3]
+  *[_type == "stillingsannonse"] | order(eventStart desc)
 `;
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
