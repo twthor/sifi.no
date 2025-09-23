@@ -53,33 +53,37 @@ async function PostPage() {
         const firstImageUrl = imageUrls[0];
 
         return (
-          <div key={post._id} className="mb-4 p-8">
-            {firstImageUrl && (
+          <div key={post._id} className="mb-4 p-8 text-wrap">
+            <div className="max-w-[550px]">
+              {firstImageUrl && (
+                <Link href={`/arrangementer/${page_id}`}>
+                  <Image
+                    src={firstImageUrl}
+                    alt={post.title}
+                    className="aspect-video rounded-xl pb-2"
+                    width="550"
+                    height="310"
+                  />
+                </Link>
+              )}
               <Link href={`/arrangementer/${page_id}`}>
-                <Image
-                  src={firstImageUrl}
-                  alt={post.title}
-                  className="aspect-video rounded-xl pb-2"
-                  width="550"
-                  height="310"
-                />
+                <h1 className="text-4xl font-bold mb-4 text-pretty break-words">
+                  {post.title}
+                </h1>
               </Link>
-            )}
-            <Link href={`/arrangementer/${page_id}`}>
-              <h1 className="text-4xl font-bold mb-4 ">{post.title}</h1>
-            </Link>
 
-            <div className="">
-              <p>
-                Publisert:{' '}
-                {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
-              </p>
-              <p>
-                Tidspunkt:{' '}
-                {new Date(post.eventStart).toLocaleString('nb-NO', {
-                  timeZone: 'Europe/Oslo',
-                })}{' '}
-              </p>
+              <div className="">
+                <p>
+                  Tidspunkt:{' '}
+                  {new Date(post.eventStart).toLocaleDateString('nb-NO', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                    timeZone: 'Europe/Oslo',
+                  })}{' '}
+                </p>
+              </div>
             </div>
           </div>
         );

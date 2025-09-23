@@ -34,8 +34,8 @@ export default async function PostPage({
   return (
     <main className="min-h-screen p-4 pt-8 md:pt-10 flex flex-col md:flex-row md:justify-center md:items-start items-center gap-4 m-0 dark:bg-gray-900">
       <div className="">
-        <Link href="/" className="hover:underline">
-          ← Tilbake til forsiden
+        <Link href="/stillingsannonser" className="hover:underline">
+          ← Tilbake til stillingsannonser
         </Link>
         {postImageUrl && (
           <Image
@@ -46,12 +46,18 @@ export default async function PostPage({
             height="310"
           />
         )}
-        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+        <h1 className="text-4xl font-bold mb-8 text-pretty break-words">
+          {post.title}
+        </h1>
         <p>
-          Publisert: {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
-        </p>
-        <p>
-          Søknadsfrist: {new Date(post.eventEnd).toLocaleDateString('nb-NO')}{' '}
+          Søknadsfrist:{' '}
+          {new Date(post.eventStart).toLocaleDateString('nb-NO', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            timeZone: 'Europe/Oslo',
+          })}{' '}
         </p>
       </div>
       <div className="prose md:flex md:flex-col md:justify-center md:items-center md:flex-wrap md:text-center md:w-96 md:pt-8">
