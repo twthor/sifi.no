@@ -46,12 +46,18 @@ export default async function PostPage({
             height="310"
           />
         )}
-        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+        <h1 className="text-4xl font-bold mb-8 text-pretty break-words">
+          {post.title}
+        </h1>
         <p>
-          Publisert: {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
-        </p>
-        <p>
-          Søknadsfrist: {new Date(post.eventEnd).toLocaleDateString('nb-NO')}{' '}
+          Søknadsfrist:{' '}
+          {new Date(post.eventStart).toLocaleDateString('nb-NO', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            timeZone: 'Europe/Oslo',
+          })}{' '}
         </p>
       </div>
       <div className="prose md:flex md:flex-col md:justify-center md:items-center md:flex-wrap md:text-center md:w-96 md:pt-8">

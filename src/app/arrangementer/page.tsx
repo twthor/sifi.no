@@ -74,12 +74,12 @@ async function PostPage() {
 
               <div className="">
                 <p>
-                  Publisert:{' '}
-                  {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
-                </p>
-                <p>
                   Tidspunkt:{' '}
-                  {new Date(post.eventStart).toLocaleString('nb-NO', {
+                  {new Date(post.eventStart).toLocaleDateString('nb-NO', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
                     timeZone: 'Europe/Oslo',
                   })}{' '}
                 </p>

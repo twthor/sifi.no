@@ -69,7 +69,9 @@ export default async function PostPage({
           </Carousel>
         </div>
 
-        <h1 className="text-4xl font-bold md:mb-1">{post.title}</h1>
+        <h1 className="text-4xl font-bold md:mb-1 text-pretty break-words">
+          {post.title}
+        </h1>
         <p>
           Tidspunkt:{' '}
           {new Date(post.eventStart).toLocaleDateString('nb-NO', {
