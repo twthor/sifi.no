@@ -34,8 +34,8 @@ export default async function PostPage({
   return (
     <main className="min-h-screen p-4 pt-8 md:pt-10 flex flex-col md:flex-row md:justify-center md:items-start items-center gap-4 m-0 dark:bg-gray-900">
       <div className="">
-        <Link href="/" className="hover:underline">
-          ← Tilbake til forsiden
+        <Link href="/stillingsannonser" className="hover:underline">
+          ← Tilbake til stillingsannonser
         </Link>
         {postImageUrl && (
           <Image

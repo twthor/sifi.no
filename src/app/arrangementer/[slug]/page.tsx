@@ -40,13 +40,13 @@ export default async function PostPage({
     ) || [];
 
   return (
-    <main className="min-h-screen p-4 pt-8 md:pt-10 flex flex-col md:flex-row md:justify-center md:items-start items-center gap-4 m-0 dark:bg-gray-900">
-      <div className="flex flex-col md:pr-8">
+    <main className="min-h-screen p-4 pt-8 md:pt-10 mb-1 flex flex-col md:flex-row md:justify-center md:items-start items-center gap-4 m-0 dark:bg-gray-900">
+      <div className="flex flex-col md:pr-8 max-w-[550px]">
         <Link href="/arrangementer" className="hover:underline">
           ← Tilbake til arrangementer
         </Link>
         <div className="relative">
-          <Carousel className="w-full max-w-[550px] h-[310px] px-0 m-0">
+          <Carousel className="w-full px-0 m-0">
             <CarouselContent>
               {Array.from({ length: imageUrls.length }).map((_, index) => (
                 <CarouselItem key={index}>
@@ -69,17 +69,18 @@ export default async function PostPage({
           </Carousel>
         </div>
 
-        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-        <p>
-          Publisert: {new Date(post.publishedAt).toLocaleDateString('nb-NO')}
-        </p>
+        <h1 className="text-4xl font-bold md:mb-1">{post.title}</h1>
         <p>
           Tidspunkt:{' '}
-          {new Date(post.eventStart).toLocaleString('nb-NO', {
+          {new Date(post.eventStart).toLocaleDateString('nb-NO', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
             timeZone: 'Europe/Oslo',
           })}{' '}
         </p>
-        <p>Sted: {post.place}</p>
+        <p className="max-w-[550px]">Sted: {post.place}</p>
       </div>
       <div className="prose md:flex md:flex-col md:justify-center md:items-center md:flex-wrap md:text-center md:w-96 md:pt-8">
         {Array.isArray(post.body) && (
