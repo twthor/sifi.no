@@ -22,6 +22,7 @@ interface Post {
   slug?: { current: string };
   publishedAt: string;
   eventStart: string;
+  eventEnd: string;
   body: string;
 }
 
@@ -39,8 +40,8 @@ async function PostPage() {
   const today = new Date();
   const filteredPosts =
     posts?.filter((post: Post) => {
-      const eventStart = new Date(post.eventStart);
-      return eventStart >= today;
+      const eventEnd = new Date(post.eventEnd);
+      return eventEnd.getTime() > today.getTime();
     }) || [];
 
   return (
@@ -84,6 +85,8 @@ async function PostPage() {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
                   timeZone: 'Europe/Oslo',
                 })}
               </p>
