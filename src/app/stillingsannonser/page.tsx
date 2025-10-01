@@ -42,10 +42,17 @@ async function AnnonsePage() {
     );
   }
 
+  const today = new Date();
+  const filteredPosts =
+    posts?.filter((post: Post) => {
+      const eventEnd = new Date(post.eventEnd);
+      return eventEnd.getTime() > today.getTime();
+    }) || [];
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post: Post) => {
+        {filteredPosts.map((post: Post) => {
           const postImageUrl = post.image
             ? urlFor(post.image)?.width(550).height(310).url()
             : null;
