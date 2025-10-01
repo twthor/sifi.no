@@ -43,7 +43,7 @@ const Navbar = () => {
           <div
             className={`${
               isOpen ? 'block' : 'hidden'
-            } md:flex md:items-center md:space-x-6 text-lg md:text-xl font-semibold`}
+            } flex flex-col md:flex md:flex-row md:items-center md:space-x-6 text-lg md:text-xl font-semibold`}
           >
             <Link
               href="/"
