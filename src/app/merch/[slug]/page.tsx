@@ -28,7 +28,11 @@ export default async function MerchDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const merch = await client.fetch<SanityDocument>(MERCH_QUERY, params, options);
+  const merch = await client.fetch<SanityDocument>(
+    MERCH_QUERY,
+    params,
+    options
+  );
 
   if (!merch) {
     return notFound();
@@ -73,10 +77,8 @@ export default async function MerchDetailPage({
           {merch.title}
         </h1>
 
-        {merch.description && (
-          <p className="mb-2">{merch.description}</p>
-        )}
-      
+        {merch.description && <p className="mb-2">{merch.description}</p>}
+
         <p className="font-medium">På lager: {merch.stock ?? 'Ukjent'}</p>
 
         <p className="mt-4">

@@ -27,7 +27,11 @@ interface Merch {
 }
 
 async function MerchPageInner() {
-  const merchItems = await client.fetch<SanityDocument>(MERCH_QUERY, {}, options);
+  const merchItems = await client.fetch<SanityDocument>(
+    MERCH_QUERY,
+    {},
+    options
+  );
 
   if (!merchItems || merchItems.length === 0) {
     return (

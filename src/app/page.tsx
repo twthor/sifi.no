@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-r from-sifiblue to-blue-600 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Velkommen til SIFI 
+          Velkommen til SIFI
         </h1>
         <p className="text-lg md:text-2xl max-w-2xl mx-auto mb-6">
           Linjeforeningen for informasjonssikkerhet på ifi!
@@ -42,7 +42,7 @@ export default function Home() {
           <p>Se våre kommende arrangementer, både faglige og sosiale.</p>
         </Link>
 
-         <Link
+        <Link
           href="/stillingsannonser"
           className="p-6 bg-slate-100 dark:bg-gray-800 rounded-xl shadow hover:shadow-lg transition"
         >
@@ -57,7 +57,6 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-2">🛍️ Merch</h2>
           <p>Sjekk ut vår genser, kopp og mer!</p>
         </Link>
-       
       </section>
 
       {/* Partner Section */}
@@ -78,8 +77,8 @@ export default function Home() {
         />
         <p className="text-center max-w-xl pb-4">
           Vår samarbeidspartner er en av Europas ledende innenfor
-          cybersikkerhetstjenester. Ekspertene deres er alltid klar til å håndtere
-          cyberangrep.
+          cybersikkerhetstjenester. Ekspertene deres er alltid klar til å
+          håndtere cyberangrep.
         </p>
         <Link
           href="https://www.mnemonic.io/"
