@@ -50,9 +50,7 @@ async function PostPage() {
     return (
       <div className="min-h-screen flex flex-col justify-start items-center gap-4 pt-20 dark:bg-gray-900">
         <p className="text-2xl font-semibold">Her var det tomt gitt!</p>
-        <p className="text-xl">
-          Følg med her for fremtidige arrangementer 😄
-        </p>
+        <p className="text-xl">Følg med her for fremtidige arrangementer 😄</p>
       </div>
     );
   }
