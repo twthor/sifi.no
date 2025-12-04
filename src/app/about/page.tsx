@@ -12,38 +12,107 @@ const boards = {
   2025: {
     groupPhoto: '/images/Styret/Styret25ny.jpeg',
     members: [
-      { name: 'Pernille Vannebo', role: 'Leder', image: '/images/Styret/PernilleLeder.jpeg' },
-      { name: 'Tobias With Thorsen', role: 'Nestleder', image: '/images/Styret/TobiasNestleder.jpeg' },
-      { name: 'Vegard Otterlei', role: 'Økonomiansvarlig', image: '/images/Styret/VegardØkonomi.jpeg' },
-      { name: 'Magnus Økstad', role: 'Bedriftskontakt', image: '/images/Styret/MagnusBedrift.jpeg' },
-      { name: 'Julia Vister', role: 'PR', image: '/images/Styret/JuliaPR.jpeg' },
-      { name: 'Adrian Skansen', role: 'Arrangementansvarlig', image: '/images/Styret/AdrianArrangement.jpeg' },
-      { name: 'Ahmed Abdulahi Ahmed', role: 'Styremedlem', image: '/images/Styret/AhmedStyremedlem.jpeg' },
-      { name: 'Emil Johannessen', role: 'Styremedlem', image: '/images/Styret/EmilStyremedlem.jpeg' },
-      { name: 'Sindre Vikre', role: 'Styremedlem', image: '/images/Styret/SindreStyremedlem.jpeg' },
+      {
+        name: 'Pernille Vannebo',
+        role: 'Leder',
+        image: '/images/Styret/PernilleLeder.jpeg',
+      },
+      {
+        name: 'Tobias With Thorsen',
+        role: 'Nestleder',
+        image: '/images/Styret/TobiasNestleder.jpeg',
+      },
+      {
+        name: 'Vegard Otterlei',
+        role: 'Økonomiansvarlig',
+        image: '/images/Styret/VegardØkonomi.jpeg',
+      },
+      {
+        name: 'Magnus Økstad',
+        role: 'Bedriftskontakt',
+        image: '/images/Styret/MagnusBedrift.jpeg',
+      },
+      {
+        name: 'Julia Vister',
+        role: 'PR',
+        image: '/images/Styret/JuliaPR.jpeg',
+      },
+      {
+        name: 'Adrian Skansen',
+        role: 'Arrangementansvarlig',
+        image: '/images/Styret/AdrianArrangement.jpeg',
+      },
+      {
+        name: 'Ahmed Abdulahi Ahmed',
+        role: 'Styremedlem',
+        image: '/images/Styret/AhmedStyremedlem.jpeg',
+      },
+      {
+        name: 'Emil Johannessen',
+        role: 'Styremedlem',
+        image: '/images/Styret/EmilStyremedlem.jpeg',
+      },
+      {
+        name: 'Sindre Vikre',
+        role: 'Styremedlem',
+        image: '/images/Styret/SindreStyremedlem.jpeg',
+      },
     ],
   },
+  // "name" has to be unique
   2026: {
     groupPhoto: '/images/Styret/Styret25.jpeg',
     members: [
       { name: 'Ny leder', role: 'Leder', image: '/images/spørsmål.png' },
-      { name: 'Ny nestleder', role: 'Nestleder', image: '/images/spørsmål.png' },
-      { name: 'Ny økonomi', role: 'Økonomiansvarlig', image: '/images/spørsmål.png' },
-      { name: 'Ny', role: 'Bedriftskontakt', image: '/images/spørsmål.png' },
-      { name: 'Ny', role: 'PR', image: '/images/spørsmål.png' },
-      { name: 'Ny', role: 'Arrangementansvarlig', image: '/images/spørsmål.png' },
-      { name: 'Ny', role: 'Teknisk ansvarlig', image: '/images/spørsmål.png' },
-      { name: 'Ny', role: 'Styremedlem', image: '/images/spørsmål.png' },
-      { name: 'Ny', role: 'Styremedlem', image: '/images/spørsmål.png' },
+      {
+        name: 'Ny nestleder',
+        role: 'Nestleder',
+        image: '/images/spørsmål.png',
+      },
+      {
+        name: 'Ny økonomi',
+        role: 'Økonomiansvarlig',
+        image: '/images/spørsmål.png',
+      },
+      {
+        name: 'Ny bedrift',
+        role: 'Bedriftskontakt',
+        image: '/images/spørsmål.png',
+      },
+      { name: 'Ny pr', role: 'PR', image: '/images/spørsmål.png' },
+      {
+        name: 'Ny arr',
+        role: 'Arrangementansvarlig',
+        image: '/images/spørsmål.png',
+      },
+      {
+        name: 'Ny teknisk',
+        role: 'Teknisk ansvarlig',
+        image: '/images/spørsmål.png',
+      },
+      {
+        name: 'Ny medlem1',
+        role: 'Styremedlem',
+        image: '/images/spørsmål.png',
+      },
+      {
+        name: 'Ny medlem2',
+        role: 'Styremedlem',
+        image: '/images/spørsmål.png',
+      },
     ],
   },
   // Add more years later...
 };
 
 const About = () => {
-  const years = Object.keys(boards).map(Number).sort((a, b) => a - b);
+  const years = Object.keys(boards)
+    .map(Number)
+    .sort((a, b) => a - b);
   const currentYear = new Date().getFullYear();
-  const startYear = years.includes(currentYear) ? currentYear : years[years.length - 1];
+  const startYear = years.includes(currentYear)
+    ? currentYear
+    : years[years.length - 1];
 
   return (
     <div className="min-h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-8">

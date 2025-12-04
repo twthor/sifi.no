@@ -1,4 +1,4 @@
-import { type SanityDocument } from 'next-sanity';
+import { QueryParams, type SanityDocument } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { client } from '@/sanity/client';
@@ -26,9 +26,14 @@ const options = { next: { revalidate: 30 } };
 export default async function MerchDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const merch = await client.fetch<SanityDocument>(MERCH_QUERY, params, options);
+  const resolvedParams = await params;
+  const merch = await client.fetch<SanityDocument>(
+    MERCH_QUERY,
+    resolvedParams as QueryParams,
+    options
+  );
 
   if (!merch) {
     return notFound();
@@ -73,10 +78,8 @@ export default async function MerchDetailPage({
           {merch.title}
         </h1>
 
-        {merch.description && (
-          <p className="mb-2">{merch.description}</p>
-        )}
-      
+        {merch.description && <p className="mb-2">{merch.description}</p>}
+
         <p className="font-medium">På lager: {merch.stock ?? 'Ukjent'}</p>
 
         <p className="mt-4">
